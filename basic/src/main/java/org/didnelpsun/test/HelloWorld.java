@@ -16,7 +16,7 @@ public class HelloWorld {
     }
     // 定义方法调用对应属性并输出
     public void saySomeThing(){
-        System.out.println(this.user +"says"+ this.words);
+        System.out.println(this.user +" says "+ this.words);
     }
 }
 ////HelloWorld.java
@@ -41,6 +41,6 @@ public class HelloWorld {
 //    }
 //    // 定义方法调用对应属性并输出
 //    public void saySomeThing(){
-//        System.out.println(this.user +"says"+ this.words);
+//        System.out.println(this.user +" says "+ this.words);
 //    }
 //}
