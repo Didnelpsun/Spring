@@ -25,14 +25,14 @@
 //}
 
 // HelloWorld.java
-package org.didnelpsun.test;
+package org.didnelpsun.entity;
 
 public class HelloWorld {
     // 私有变量words
     private String words;
     private String user = "Didnelpsun";
     public HelloWorld(){
-        System.out.println("HelloWorldClass...");
+        System.out.println("HelloWorldClass");
     }
     //如果我们要对这个类的属性赋值，那么一定要是set开头，如果需要参数就要传入参数
     //set开头是因为这是对应的setter方法，用来设置属性

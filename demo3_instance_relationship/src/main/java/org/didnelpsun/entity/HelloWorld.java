@@ -1,5 +1,5 @@
-//HelloWorld.java
-package org.didnelpsun.test;
+// HelloWorld.java
+package org.didnelpsun.entity;
 public class HelloWorld {
     // 定义两个私有属性
     private String words;

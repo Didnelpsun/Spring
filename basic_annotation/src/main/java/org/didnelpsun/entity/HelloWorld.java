@@ -1,5 +1,5 @@
 // HelloWorld.java
-package org.didnelpsun.test;
+package org.didnelpsun.entity;
 // 引入Components注释
 import org.springframework.stereotype.Component;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class HelloWorld {
     // 默认构造函数，一旦HelloWorld类被实例化就会被调用
     public HelloWorld () {
-        System.out.println("HelloWorldClass...");
+        System.out.println("HelloWorldClass");
     }
     // 私有变量words
     private String words;

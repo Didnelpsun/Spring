@@ -1,7 +1,7 @@
 // App.java
 package org.didnelpsun;
 // 引入依赖类HelloWorld
-import org.didnelpsun.test.HelloWorld;
+import org.didnelpsun.entity.HelloWorld;
 // 引入ApplicationContext容器
 import org.springframework.context.ApplicationContext;
 // 引入支持注释类的context容器

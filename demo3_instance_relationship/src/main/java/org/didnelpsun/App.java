@@ -1,7 +1,7 @@
 // App.java
 package org.didnelpsun;
 // 项目入口
-import org.didnelpsun.test.HelloWorld;
+import org.didnelpsun.entity.HelloWorld;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App

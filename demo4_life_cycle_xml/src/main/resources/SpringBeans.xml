@@ -5,7 +5,7 @@
        default-init-method="defaultInit"
        default-destroy-method="defaultDestroy"
 >
-    <bean id = "HelloWorldBean" class="org.didnelpsun.test.HelloWorld"
+    <bean id = "HelloWorldBean" class="org.didnelpsun.entity.HelloWorld"
           init-method="init"
           destroy-method="destroyMethod"
     >

@@ -2,25 +2,25 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<!--    <bean id = "HelloWorldBean" class="org.didnelpsun.test.HelloWorld" scope="prototype"/>-->
-<!--    <bean id = "HelloWorldBean" class="org.didnelpsun.test.HelloWorld">-->
+<!--    <bean id = "HelloWorldBean" class="org.didnelpsun.entity.HelloWorld" scope="prototype"/>-->
+<!--    <bean id = "HelloWorldBean" class="org.didnelpsun.entity.HelloWorld">-->
 <!--        <property name="user" value="Didnelpsun"/>-->
 <!--        <property name="words" value="hello!"/>-->
 <!--    </bean>-->
-<!--    <bean id = "HelloWorldBean2" class="org.didnelpsun.test.HelloWorld">-->
+<!--    <bean id = "HelloWorldBean2" class="org.didnelpsun.entity.HelloWorld">-->
 <!--        <property name="user" value="Ameng" />-->
 <!--        <property name="words" value="hello2!"/>-->
 <!--    </bean>-->
 <!--    &lt;!&ndash;将Bean2删掉并设置为原型作用域，配置不变&ndash;&gt;-->
-<!--    <bean id = "HelloWorldBean" class="org.didnelpsun.test.HelloWorld" scope="prototype">-->
+<!--    <bean id = "HelloWorldBean" class="org.didnelpsun.entity.HelloWorld" scope="prototype">-->
 <!--        <property name="user" value="Didnelpsun"/>-->
 <!--        <property name="words" value="hello!"/>-->
 <!--    </bean>-->
-    <bean id = "HelloWorldBean" class="org.didnelpsun.test.HelloWorld" abstract="true">
+    <bean id = "HelloWorldBean" class="org.didnelpsun.entity.HelloWorld" abstract="true">
         <property name="user" value="Didnelpsun"/>
         <property name="words" value="hello!"/>
     </bean>
-    <bean id = "HelloWorldBean2" class="org.didnelpsun.test.HelloWorld" parent="HelloWorldBean">
+    <bean id = "HelloWorldBean2" class="org.didnelpsun.entity.HelloWorld" parent="HelloWorldBean">
         <property name="words" value="get out"/>
     </bean>
 </beans>

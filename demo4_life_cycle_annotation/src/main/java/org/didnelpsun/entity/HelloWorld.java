@@ -1,5 +1,5 @@
 // HelloWorld.java
-package org.didnelpsun.test;
+package org.didnelpsun.entity;
 // 引入Components注释
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.DisposableBean;

@@ -1,10 +1,10 @@
 // HelloWorld.java
-package org.didnelpsun.test;
+package org.didnelpsun.entity;
 
 public class HelloWorld {
     // 默认构造函数，一旦HelloWorld类被实例化就会被调用
     HelloWorld () {
-        System.out.println("HelloWorldClass...");
+        System.out.println("HelloWorldClass");
     }
     // 私有变量words
     private String words;
