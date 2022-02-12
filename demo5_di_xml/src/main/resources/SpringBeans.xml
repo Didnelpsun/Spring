@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    <bean id="HelloWorld" class="org.didnelpsun.entity.HelloWorld"/>-->
+<!--    <bean id="HelloWorld2" class="org.didnelpsun.entity.HelloWorld2"/>-->
+<!--    <bean id="Didnelpsun" class="org.didnelpsun.entity.User">-->
+<!--        <constructor-arg ref="HelloWorld"/>-->
+<!--    </bean>-->
+<!--    <bean id="Didnelpsun" class="org.didnelpsun.entity.User">-->
+<!--        <constructor-arg ref="HelloWorld"/>-->
+<!--        <constructor-arg ref="HelloWorld2" />-->
+<!--    </bean>-->
+<!--    <bean id="HelloWorld" class="org.didnelpsun.entity.HelloWorld"/>-->
+<!--    <bean id="Didnelpsun" class="org.didnelpsun.entity.User">-->
+<!--        <constructor-arg type="java.lang.Integer" value="19" />-->
+<!--        <constructor-arg type="java.lang.String" value="Hello!"/>-->
+<!--        <constructor-arg ref="HelloWorld"/>-->
+<!--        <constructor-arg type="java.lang.String" value="password!"/>-->
+<!--    </bean>-->
+<!--    <bean id="Didnelpsun" class="org.didnelpsun.entity.User">-->
+<!--        <constructor-arg index="0" ref="HelloWorld"/>-->
+<!--        <constructor-arg index="1" value="Hello!"/>-->
+<!--        <constructor-arg index="2" value="password!"/>-->
+<!--        <constructor-arg index="3" value="19" />-->
+<!--    </bean>-->
+<!--    <bean id="Didnelpsun" class="org.didnelpsun.entity.User">-->
+<!--        <property name="helloWorld" ref="HelloWorld"/>-->
+<!--        <property name="words" value="Hello!"/>-->
+<!--        <property name="age" value="19"/>-->
+<!--        <property name="password" value="password!"/>-->
+<!--    </bean>-->
+<!--    <bean id="Didnelpsun" class="org.didnelpsun.entity.User"-->
+<!--          p:helloWorld-ref = "HelloWorld"-->
+<!--          p:words="Hello!"-->
+<!--          p:age="19"-->
+<!--          p:password="password!"-->
+<!--    >-->
+<!--    </bean>-->
+    <bean id="Didnelpsun" class="org.didnelpsun.entity.User">
+        <property name="helloWorld">
+            <bean id="HelloWorld" class="org.didnelpsun.entity.HelloWorld"/>
+        </property>
+        <property name="words" value="Hello!"/>
+        <property name="age" value="19"/>
+        <property name="password" value="password!"/>
+    </bean>
+</beans>
