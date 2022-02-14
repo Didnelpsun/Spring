@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id = "helloWorld" class="org.didnelpsun.entity.HelloWorld">
+        <property name="words" value="hi" />
+    </bean>
+    <bean id = "helloWorld2" class="org.didnelpsun.entity.HelloWorld">
+        <property name="words" value="hi2" />
+    </bean>
+<!--    <bean id="User" class="org.didnelpsun.entity.User">-->
+<!--        <property name="helloWorld" ref="HelloWorld"></property>-->
+<!--    </bean>-->
+<!--    <bean id="User" class="org.didnelpsun.entity.User" autowire="byName" />-->
+<!--    <bean id="User" class="org.didnelpsun.entity.User" autowire="byType" />-->
+    <bean id="User" class="org.didnelpsun.entity.User" autowire="constructor" />
+</beans>
