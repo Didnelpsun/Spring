@@ -2,7 +2,10 @@
 package org.didnelpsun.entity;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+//@Component
 public class User {
     private String name;
     private Integer age;
@@ -37,6 +40,7 @@ public class User {
         return helloWorld;
     }
     @Autowired
+    @Qualifier("Hi")
     public void setHelloWorld(HelloWorld helloWorld) {
         this.helloWorld = helloWorld;
     }
