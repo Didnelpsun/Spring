@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    <bean id = "HelloWorldBean" class="org.didnelpsun.entity.HelloWorld">-->
+<!--        <property name="words" value="hi"/>-->
+<!--    </bean>-->
+<!--    <bean id = "Start" class="org.didnelpsun.event.StartHandler"/>-->
+<!--    <bean id = "Stop" class="org.didnelpsun.event.StopHandler"/>-->
+<!--    <bean id = "Close" class="org.didnelpsun.event.CloseHandler"/>-->
+<!--    <bean id="PrintHandler" class="org.didnelpsun.event.PrintHandler"/>-->
+    <bean id="PrintEventPublisher" class="org.didnelpsun.event.PrintEventPublisher"/>
+</beans>
