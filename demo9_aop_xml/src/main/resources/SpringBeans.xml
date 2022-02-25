@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop = "http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+">
+    <bean id="userService" class="org.didnelpsun.service.UserService">
+        <property name="userDAO" ref="userDAO" />
+    </bean>
+    <bean id="userDAO" class="org.didnelpsun.dao.UserDAO" />
+    <!--Spring基于XML的AOP配置步骤-->
+    <!--1.把通知的Bean交给Spring管理-->
+    <!--配置Logger类-->
+    <bean id="logger" class="org.didnelpsun.utils.Logger" />
+    <!--2.使用aop:config标签表明开始对AOP的配置-->
+    <!--配置AOP-->
+    <!--proxy-target-class表示代理类型，如果是true则是基于子类，若是false则是基于接口，默认值是false-->
+    <aop:config proxy-target-class="true">
+        <!--3.使用aop:aspect表明开始配置AOP切面-->
+        <!--id属性是给切面一个唯一标识-->
+        <!--ref属性是指定通知类bean的id-->
+        <aop:aspect id="loggerAdvice" ref="logger">
+            <!--4.在aop:aspect标签内部使用对应标签来配置通知的类型与切入点-->
+            <!--method属性用于指定类的哪个方法来进行前置通知-->
+            <!--logger是前置通知，使用aop:before配置-->
+            <!--pointcut属性，用于指定切入点表达式，指对业务层哪些方法进行增强-->
+            <!--切入点表达式的写法：execution(表达式)-->
+            <!--表达式：访问修饰符 返回值 全限定类名.方法名(参数列表)-->
+<!--            <aop:before method="printLog" pointcut="execution(public void org.didnelpsun.service.UserService.test())" />-->
+<!--            <aop:before method="beforePrintLog" pointcut="execution(public * *..service.*Service.*User*(..))" />-->
+<!--            <aop:after-returning method="returnPrintLog" pointcut="execution(public * *..service.*Service.*User*(..))" />-->
+<!--            <aop:after-throwing method="exceptionPrintLog" pointcut="execution(public * *..service.*Service.*User*(..))" />-->
+<!--            <aop:after method="afterPrintLog" pointcut="execution(public * *..service.*Service.*User*(..))" />-->
+<!--            <aop:around method="aroundPrintLog" pointcut="execution(public * *..service.*Service.*User*(..))" />-->
+            <aop:before method="beforePrintLog" pointcut-ref="expression" />
+            <aop:after-returning method="returnPrintLog" pointcut-ref="expression" />
+            <aop:after-throwing method="exceptionPrintLog" pointcut-ref="expression" />
+            <aop:after method="afterPrintLog" pointcut-ref="expression" />
+            <aop:pointcut id="expression" expression="execution(public * *..service.*Service.*User*(..))"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

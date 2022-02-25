@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="userService" class="org.didnelpsun.service.UserService">
+        <property name="userDAO" ref="userDAO" />
+<!--        <property name="transactionManager" ref="transactionManager" />-->
+    </bean>
+    <bean id="userDAO" class="org.didnelpsun.dao.UserDAO" />
+    <bean id="transactionManager" class="org.didnelpsun.utils.TransactionManager">
+        <property name="connectionThread" ref="connectionThread" />
+    </bean>
+    <bean id="connectionThread" class="org.didnelpsun.utils.ConnectionThread">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <!--配置数据库连接的基本信息-->
+        <!--jdbc驱动程序-->
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <!--数据库连接字符串-->
+        <property name="url" value="jdbc:mysql://localhost:3306/data"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+    <!--配置serviceProxy这个生成service代理的工厂类-->
+    <bean id="serviceProxy" class="org.didnelpsun.proxy.ServiceProxy">
+        <property name="userService" ref="userService" />
+        <property name="transactionManager" ref="transactionManager" />
+    </bean>
+    <!--使用serviceProxy进行实例工厂模式生成bean-->
+    <bean id="userServiceProxy" factory-bean="serviceProxy" factory-method="getUserService" />
+</beans>
