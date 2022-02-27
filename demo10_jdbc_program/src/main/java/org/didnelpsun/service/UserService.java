@@ -6,7 +6,6 @@ import org.didnelpsun.entity.User;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionTemplate;
-
 import java.util.List;
 
 public class UserService implements UserServiceInterface {
@@ -48,10 +47,28 @@ public class UserService implements UserServiceInterface {
     }
     @Override
     public int updateUser(User user) {
-        return userDAO.updateUser(user);
+        final int[] returnValue = new int[1];
+        transactionTemplate.execute(new TransactionCallback<Object>() {
+            @Override
+            public Object doInTransaction(TransactionStatus transactionStatus) {
+                // 在这个方法里面放入DAO操作
+                returnValue[0] =  userDAO.updateUser(user);
+                return null;
+            }
+        });
+        return returnValue[0];
     }
     @Override
     public int deleteUser(Integer id) {
-        return userDAO.deleteUser(id);
+        final int[] returnValue = new int[1];
+        transactionTemplate.execute(new TransactionCallback<Object>() {
+            @Override
+            public Object doInTransaction(TransactionStatus transactionStatus) {
+                // 在这个方法里面放入DAO操作
+                returnValue[0] =  userDAO.deleteUser(id);
+                return null;
+            }
+        });
+        return returnValue[0];
     }
 }
